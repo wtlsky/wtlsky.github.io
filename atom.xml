@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wtlsky.github.io/"/>
-  <updated>2017-10-19T02:33:30.810Z</updated>
+  <updated>2018-02-03T13:05:18.399Z</updated>
   <id>https://wtlsky.github.io/</id>
   
   <author>
@@ -15,6 +15,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微信小程序自定义按钮样式</title>
+    <link href="https://wtlsky.github.io/2018/02/03/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%89%E9%92%AE%E6%A0%B7%E5%BC%8F/"/>
+    <id>https://wtlsky.github.io/2018/02/03/微信小程序自定义按钮样式/</id>
+    <published>2018-02-03T11:41:00.000Z</published>
+    <updated>2018-02-03T13:05:18.399Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在开发微信小程序，根据设计图完成页面。遇到如下图的设计稿，实现过程中发现微信小程序自带的按钮一直会有一条黑色边框，使用常规 CSS 无法清除，导致页面的保存按钮不能实现与设计师相同的效果。</p><p>经过查找资料成功解决，现记录下来，以防忘记。</p><p><img src="http://ow0mz7346.bkt.clouddn.com/18-2-3/63721704.jpg?imageMogr2/thumbnail/!55p" alt="设计图"></p><a id="more"></a><h2 id="默认按钮"><a href="#默认按钮" class="headerlink" title="默认按钮"></a>默认按钮</h2><p>在解决问题之前，先来看看微信小程序默认的按钮样式。</p><p><img src="http://ow0mz7346.bkt.clouddn.com/18-2-3/93158409.jpg" alt="默认按钮"></p><p>根据官方文档说明，微信小程序的按钮可有三种不同的类型，分别时：<code>primary</code>（绿色）、<code>warn</code>（红色）和 <code>default</code> （灰白色）。按钮上的文字颜色根据不同类型自动变化。</p><p>不过在实际开发过程中默认的按钮样式一定无法达到设计师的要求，那么我们如何自定义样式呢？</p><h2 id="自定义按钮样式"><a href="#自定义按钮样式" class="headerlink" title="自定义按钮样式"></a>自定义按钮样式</h2><p>通过在 wxss 中为 button 设置样式可自定义按钮样式。</p><p><img src="http://ow0mz7346.bkt.clouddn.com/18-2-3/31196457.jpg?" alt="自定义按钮样式"></p><p>上图中我为最底下的按钮设置了背景颜色和字体大小。与设计稿相比可发现设计稿中没有圆角，并且没有边框。接下来为按钮设置 <code>border-radius:0;border:0;</code> 的样式来清除圆角和边框。</p><p><img src="http://ow0mz7346.bkt.clouddn.com/18-2-3/33044597.jpg" alt="清除圆角和边框-未成功"></p><p><img src="http://ow0mz7346.bkt.clouddn.com/18-2-3/82763648.jpg" alt="放大图"></p><p>o((⊙﹏⊙))o 起初看到这个结果我以为是还有圆角（近视眼伤不起啊），后来经过放大发现是 border 的原因。但是我写了    <code>border:0;</code> 了呀。为什么还有，不科学。</p><p>经过一番查找，终于找到了解决方案。原来是微信小程序里覆盖border样式需要在after伪元素里设置才能生效。经实际测试有效。不明白为什么微信小程序要这样设计。</p><p><img src="http://ow0mz7346.bkt.clouddn.com/18-2-3/29101258.jpg" alt="最终效果图"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在开发微信小程序，根据设计图完成页面。遇到如下图的设计稿，实现过程中发现微信小程序自带的按钮一直会有一条黑色边框，使用常规 CSS 无法清除，导致页面的保存按钮不能实现与设计师相同的效果。&lt;/p&gt;
+&lt;p&gt;经过查找资料成功解决，现记录下来，以防忘记。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ow0mz7346.bkt.clouddn.com/18-2-3/63721704.jpg?imageMogr2/thumbnail/!55p&quot; alt=&quot;设计图&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="微信小程序" scheme="https://wtlsky.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+      <category term="样式" scheme="https://wtlsky.github.io/tags/%E6%A0%B7%E5%BC%8F/"/>
+    
+      <category term="按钮" scheme="https://wtlsky.github.io/tags/%E6%8C%89%E9%92%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS浮动学习</title>
+    <link href="https://wtlsky.github.io/2017/11/20/CSS%E6%B5%AE%E5%8A%A8%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://wtlsky.github.io/2017/11/20/CSS浮动学习/</id>
+    <published>2017-11-20T12:04:32.000Z</published>
+    <updated>2018-01-23T12:53:10.144Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="常规流、包含块和块框"><a href="#常规流、包含块和块框" class="headerlink" title="常规流、包含块和块框"></a>常规流、包含块和块框</h1><ul><li><p>页面内容像流水一样从上至下，从左自动排列即为常规流。如果一个元素处于常规流则会自动将之后的元素（文本、图像等）顶到后边。</p></li><li><p>对常规流内的元素设置浮动或定位可使该元素脱离常规流（并不全是）</p></li><li><p>一个元素的包含块即该元素的块级父元素。</p></li><li><p>一个元素设置了浮动后则变为浮动元素（即块框）</p></li></ul><a id="more"></a><h1 id="浮动元素与常规流"><a href="#浮动元素与常规流" class="headerlink" title="浮动元素与常规流"></a>浮动元素与常规流</h1><p>浮动元素既在常规流内又在常规流外。</p><ul><li><p>浮动元素不直接影响块级元素布局（块级元素当浮动元素不存在）</p></li><li><p>浮动元素间接影响行内元素布局（可直接影响行内元素尺寸，行内元素可影响块级元素布局）</p></li></ul><h1 id="浮动与定位"><a href="#浮动与定位" class="headerlink" title="浮动与定位"></a>浮动与定位</h1><ul><li><p>浮动不可与定位同时使用</p></li><li><p>同时拥有浮动与定位的元素则浮动会失效而定位生效</p></li><li><p>相对定位不受以上规则限制（相对定位不会使元素脱离常规流）</p></li></ul><h1 id="浮动元素的摆放"><a href="#浮动元素的摆放" class="headerlink" title="浮动元素的摆放"></a>浮动元素的摆放</h1><ol><li><p>拥有浮动属性的元素会尽量靠上</p></li><li><p>拥有浮动属性的元素会尽量靠向浮动的方向</p></li><li><p>若两个浮动元素为兄弟元素则在第一二条基础上可能相互靠近，margin为两者之和</p></li><li><p>浮动元素不能超出其包含块（除非浮动元素比包含块尺寸更大）</p></li><li><p>浮动元素不能超出其所在行的最高点</p></li><li><p>浮动元素不能超过其前面浮动元素的最高点</p></li></ol><h1 id="浮动元素与行内元素"><a href="#浮动元素与行内元素" class="headerlink" title="浮动元素与行内元素"></a>浮动元素与行内元素</h1><ul><li><p>行内元素可出现在左浮动元素的右边与右浮动元素的左边</p></li><li><p>左浮动元素的左边及右浮动元素的右边不能出现行内元素（共用同一包含块时）</p></li></ul><h1 id="浮动的清除-clear"><a href="#浮动的清除-clear" class="headerlink" title="浮动的清除(clear)"></a>浮动的清除(clear)</h1><p><code>clear: none | left | right |both;</code></p><ul><li><p>浮动的清除指含有clear属性的元素下移，直到某一边（或两边）没有浮动元素为止</p></li><li><p>clear只对块级元素有效</p></li></ul><h1 id="浮动的闭合"><a href="#浮动的闭合" class="headerlink" title="浮动的闭合"></a>浮动的闭合</h1><p>因块级元素当浮动元素不存在，所以块级元素内的元素含有浮动属性时，块级元素的高度会塌陷。（块级元素默认无高度，靠内部的行内元素撑开高度或人为设置高度）</p><p>一般情况下我们希望浮动元素本身可将其包含块的高度撑开，达到此效果则被称为浮动闭合。</p><h2 id="闭合方法"><a href="#闭合方法" class="headerlink" title="闭合方法"></a>闭合方法</h2><ol><li><p>为浮动元素的包含块设置高度（暴力）</p></li><li><p>在浮动元素的包含块内放置行内元素，并将该行内元素设置为100%</p></li><li><p>为浮动元素的包含块设置overflow:hidden;（BFC）</p></li><li><p>在浮动元素的包含块内放置一个常规流内的块级元素（一般使用<code>::after</code>将其设置为块级元素，块级元素的宽度默认为100%），利用clear将元素下移的能力将包含块撑开</p></li><li><p><code>display:flow-root</code></p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;常规流、包含块和块框&quot;&gt;&lt;a href=&quot;#常规流、包含块和块框&quot; class=&quot;headerlink&quot; title=&quot;常规流、包含块和块框&quot;&gt;&lt;/a&gt;常规流、包含块和块框&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;页面内容像流水一样从上至下，从左自动排列即为常规流。如果一个元素处于常规流则会自动将之后的元素（文本、图像等）顶到后边。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;对常规流内的元素设置浮动或定位可使该元素脱离常规流（并不全是）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;一个元素的包含块即该元素的块级父元素。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;一个元素设置了浮动后则变为浮动元素（即块框）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="css" scheme="https://wtlsky.github.io/tags/css/"/>
+    
+      <category term="浮动" scheme="https://wtlsky.github.io/tags/%E6%B5%AE%E5%8A%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>使用javascript撸一棵二叉排序树</title>

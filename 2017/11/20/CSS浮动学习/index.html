@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="css,浮动," />
 
 
 
@@ -88,17 +88,18 @@
 
 
 
-<meta name="description" content="生活不易，祝好祝顺">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="https://wtlsky.github.io/about/index.html">
+<meta name="description" content="常规流、包含块和块框 页面内容像流水一样从上至下，从左自动排列即为常规流。如果一个元素处于常规流则会自动将之后的元素（文本、图像等）顶到后边。  对常规流内的元素设置浮动或定位可使该元素脱离常规流（并不全是）  一个元素的包含块即该元素的块级父元素。  一个元素设置了浮动后则变为浮动元素（即块框）">
+<meta name="keywords" content="css,浮动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS浮动学习">
+<meta property="og:url" content="https://wtlsky.github.io/2017/11/20/CSS浮动学习/index.html">
 <meta property="og:site_name" content="TianLiang">
-<meta property="og:description" content="生活不易，祝好祝顺">
+<meta property="og:description" content="常规流、包含块和块框 页面内容像流水一样从上至下，从左自动排列即为常规流。如果一个元素处于常规流则会自动将之后的元素（文本、图像等）顶到后边。  对常规流内的元素设置浮动或定位可使该元素脱离常规流（并不全是）  一个元素的包含块即该元素的块级父元素。  一个元素设置了浮动后则变为浮动元素（即块框）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-05T04:14:41.912Z">
+<meta property="og:updated_time" content="2018-01-23T12:53:10.144Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="生活不易，祝好祝顺">
+<meta name="twitter:title" content="CSS浮动学习">
+<meta name="twitter:description" content="常规流、包含块和块框 页面内容像流水一样从上至下，从左自动排列即为常规流。如果一个元素处于常规流则会自动将之后的元素（文本、图像等）顶到后边。  对常规流内的元素设置浮动或定位可使该元素脱离常规流（并不全是）  一个元素的包含块即该元素的块级父元素。  一个元素设置了浮动后则变为浮动元素（即块框）">
 
 
 
@@ -128,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="https://wtlsky.github.io/about/"/>
+  <link rel="canonical" href="https://wtlsky.github.io/2017/11/20/CSS浮动学习/"/>
 
 
 
 
 
-  <title>about | TianLiang</title>
+  <title>CSS浮动学习 | TianLiang</title>
   
 
 
@@ -293,33 +294,279 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wtlsky.github.io/2017/11/20/CSS浮动学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="武天亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TianLiang">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">about</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">CSS浮动学习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T20:04:32+08:00">
+                2017-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-      </div>
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/11/20/CSS浮动学习/" class="leancloud_visitors" data-flag-title="CSS浮动学习">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h1 id="常规流、包含块和块框"><a href="#常规流、包含块和块框" class="headerlink" title="常规流、包含块和块框"></a>常规流、包含块和块框</h1><ul>
+<li><p>页面内容像流水一样从上至下，从左自动排列即为常规流。如果一个元素处于常规流则会自动将之后的元素（文本、图像等）顶到后边。</p>
+</li>
+<li><p>对常规流内的元素设置浮动或定位可使该元素脱离常规流（并不全是）</p>
+</li>
+<li><p>一个元素的包含块即该元素的块级父元素。</p>
+</li>
+<li><p>一个元素设置了浮动后则变为浮动元素（即块框）</p>
+</li>
+</ul>
+<a id="more"></a>
+<h1 id="浮动元素与常规流"><a href="#浮动元素与常规流" class="headerlink" title="浮动元素与常规流"></a>浮动元素与常规流</h1><p>浮动元素既在常规流内又在常规流外。</p>
+<ul>
+<li><p>浮动元素不直接影响块级元素布局（块级元素当浮动元素不存在）</p>
+</li>
+<li><p>浮动元素间接影响行内元素布局（可直接影响行内元素尺寸，行内元素可影响块级元素布局）</p>
+</li>
+</ul>
+<h1 id="浮动与定位"><a href="#浮动与定位" class="headerlink" title="浮动与定位"></a>浮动与定位</h1><ul>
+<li><p>浮动不可与定位同时使用</p>
+</li>
+<li><p>同时拥有浮动与定位的元素则浮动会失效而定位生效</p>
+</li>
+<li><p>相对定位不受以上规则限制（相对定位不会使元素脱离常规流）</p>
+</li>
+</ul>
+<h1 id="浮动元素的摆放"><a href="#浮动元素的摆放" class="headerlink" title="浮动元素的摆放"></a>浮动元素的摆放</h1><ol>
+<li><p>拥有浮动属性的元素会尽量靠上</p>
+</li>
+<li><p>拥有浮动属性的元素会尽量靠向浮动的方向</p>
+</li>
+<li><p>若两个浮动元素为兄弟元素则在第一二条基础上可能相互靠近，margin为两者之和</p>
+</li>
+<li><p>浮动元素不能超出其包含块（除非浮动元素比包含块尺寸更大）</p>
+</li>
+<li><p>浮动元素不能超出其所在行的最高点</p>
+</li>
+<li><p>浮动元素不能超过其前面浮动元素的最高点</p>
+</li>
+</ol>
+<h1 id="浮动元素与行内元素"><a href="#浮动元素与行内元素" class="headerlink" title="浮动元素与行内元素"></a>浮动元素与行内元素</h1><ul>
+<li><p>行内元素可出现在左浮动元素的右边与右浮动元素的左边</p>
+</li>
+<li><p>左浮动元素的左边及右浮动元素的右边不能出现行内元素（共用同一包含块时）</p>
+</li>
+</ul>
+<h1 id="浮动的清除-clear"><a href="#浮动的清除-clear" class="headerlink" title="浮动的清除(clear)"></a>浮动的清除(clear)</h1><p><code>clear: none | left | right |both;</code></p>
+<ul>
+<li><p>浮动的清除指含有clear属性的元素下移，直到某一边（或两边）没有浮动元素为止</p>
+</li>
+<li><p>clear只对块级元素有效</p>
+</li>
+</ul>
+<h1 id="浮动的闭合"><a href="#浮动的闭合" class="headerlink" title="浮动的闭合"></a>浮动的闭合</h1><p>因块级元素当浮动元素不存在，所以块级元素内的元素含有浮动属性时，块级元素的高度会塌陷。（块级元素默认无高度，靠内部的行内元素撑开高度或人为设置高度）</p>
+<p>一般情况下我们希望浮动元素本身可将其包含块的高度撑开，达到此效果则被称为浮动闭合。</p>
+<h2 id="闭合方法"><a href="#闭合方法" class="headerlink" title="闭合方法"></a>闭合方法</h2><ol>
+<li><p>为浮动元素的包含块设置高度（暴力）</p>
+</li>
+<li><p>在浮动元素的包含块内放置行内元素，并将该行内元素设置为100%</p>
+</li>
+<li><p>为浮动元素的包含块设置overflow:hidden;（BFC）</p>
+</li>
+<li><p>在浮动元素的包含块内放置一个常规流内的块级元素（一般使用<code>::after</code>将其设置为块级元素，块级元素的宽度默认为100%），利用clear将元素下移的能力将包含块撑开</p>
+</li>
+<li><p><code>display:flow-root</code></p>
+</li>
+</ol>
+
       
     </div>
     
     
     
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/weChat.png" alt="武天亮 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>微信扫描添加好友</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="武天亮 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="武天亮 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+            <a href="/tags/浮动/" rel="tag"># 浮动</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/09/javascript二叉排序树/" rel="next" title="使用javascript撸一棵二叉排序树">
+                <i class="fa fa-chevron-left"></i> 使用javascript撸一棵二叉排序树
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/03/微信小程序自定义按钮样式/" rel="prev" title="微信小程序自定义按钮样式">
+                微信小程序自定义按钮样式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -328,6 +575,14 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="vcomments"></div>
+    </div>
+  
+
+
 
         </div>
         
@@ -348,8 +603,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -427,6 +691,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常规流、包含块和块框"><span class="nav-number">1.</span> <span class="nav-text">常规流、包含块和块框</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浮动元素与常规流"><span class="nav-number">2.</span> <span class="nav-text">浮动元素与常规流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浮动与定位"><span class="nav-number">3.</span> <span class="nav-text">浮动与定位</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浮动元素的摆放"><span class="nav-number">4.</span> <span class="nav-text">浮动元素的摆放</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浮动元素与行内元素"><span class="nav-number">5.</span> <span class="nav-text">浮动元素与行内元素</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浮动的清除-clear"><span class="nav-number">6.</span> <span class="nav-text">浮动的清除(clear)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浮动的闭合"><span class="nav-number">7.</span> <span class="nav-text">浮动的闭合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#闭合方法"><span class="nav-number">7.1.</span> <span class="nav-text">闭合方法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
