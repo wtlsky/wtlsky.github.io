@@ -305,6 +305,141 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wtlsky.github.io/2018/05/06/微信小程序文件保存踩坑记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="武天亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TianLiang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/06/微信小程序文件保存踩坑记/" itemprop="url">微信小程序文件保存踩坑记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T16:20:00+08:00">
+                2018-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/05/06/微信小程序文件保存踩坑记/" class="leancloud_visitors" data-flag-title="微信小程序文件保存踩坑记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>在同事近期开发的项目中遇到一个需求：将小程序中的视频保存在用户手机相册中。所以前往官方文档查询实现方法。发现官方提供了  <code>wx.downloadFile</code> 和 <code>wx.saveFile</code>  接口，遂告诉同事使用这两个接口进行保存，然而在手机相册中并未找到下载的文件。后仔细阅读文档后发现了 <code>wx.saveVideoToPhotosAlbum</code>  这个接口才得以解决问题。事后认真阅读文档整理了这篇踩坑记录。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/06/微信小程序文件保存踩坑记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wtlsky.github.io/2018/02/28/微信小程序无限制生成formId/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -388,16 +523,8 @@
         
           <blockquote>
 <p style="color:#d33332">请注意：如无特殊情况不建议使用该方法生成form ID为用户推送消息，可能会对用户造成骚扰。从用户角度出发建议明确告知用户消息推送机制，按照正常流程为用户提供消息推送服务</p>
-
 </blockquote>
 <p>微信小程序模板消息推送需要配合form ID进行使用，这种做法可以防止服务方对用户产生消息骚扰。而这种设定带来便利的同时也对服务端为用户提供更好的服务产生了阻碍。在用户提交一次表单后发送多条消息提醒的环境中，服务方无法保证拿到足够数量的form ID来为用户下发消息提醒。这时需要使用变通的方法获取足够数量的 from ID。</p>
-<h3 id="微信小程序模板消息（官方说明）"><a href="#微信小程序模板消息（官方说明）" class="headerlink" title="微信小程序模板消息（官方说明）"></a>微信小程序模板消息（官方说明）</h3><blockquote>
-<p>微信小程序基于微信的通知渠道，为开发者提供了可以高效触达用户的模板消息能力，以便实现服务的闭环并提供更佳的体验。</p>
-<h4 id="下发条件说明"><a href="#下发条件说明" class="headerlink" title="下发条件说明"></a>下发条件说明</h4><ol>
-<li>支付<br>当用户在小程序内完成过支付行为，可允许开发者向用户在 7 天内推送有限条数的模板消息（1 次支付可下发 3 条，多次支付下发条数独立，互相不影响）</li>
-<li>提交表单<br>当用户在小程序内发生过提交<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/component/form.html" target="_blank" rel="external">表单</a>行为且该表单声明为要发模板消息的，开发者需要向用户提供服务时，可允许开发者向用户在 7 天内推送有限条数的模板消息（1 次提交表单可下发 1 条，多次提交下发条数独立，相互不影响）</li>
-</ol>
-</blockquote>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/02/28/微信小程序无限制生成formId/#more" rel="contents">
@@ -819,9 +946,9 @@
 <li>若右子树不空，则右子树上所有结点的值均大于或等于它的根结点的值；</li>
 <li>左、右子树也分别为二叉排序树</li>
 </ol>
-<h2 id="构造二叉排序树"><a href="#构造二叉排序树" class="headerlink" title="构造二叉排序树"></a>构造二叉排序树</h2><h3 id="创建节点（Node-类"><a href="#创建节点（Node-类" class="headerlink" title="创建节点（Node) 类"></a>创建节点（Node) 类</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(key)&#123;</div><div class="line">    <span class="keyword">this</span>.left = <span class="literal">null</span> <span class="comment">//左子树</span></div><div class="line">    <span class="keyword">this</span>.right = <span class="literal">null</span> <span class="comment">//右子树</span></div><div class="line">    <span class="keyword">this</span>.key = key <span class="comment">//节点的值</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="构造二叉排序树"><a href="#构造二叉排序树" class="headerlink" title="构造二叉排序树"></a>构造二叉排序树</h2><h3 id="创建节点（Node-类"><a href="#创建节点（Node-类" class="headerlink" title="创建节点（Node) 类"></a>创建节点（Node) 类</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(key)&#123;</span><br><span class="line">    <span class="keyword">this</span>.left = <span class="literal">null</span> <span class="comment">//左子树</span></span><br><span class="line">    <span class="keyword">this</span>.right = <span class="literal">null</span> <span class="comment">//右子树</span></span><br><span class="line">    <span class="keyword">this</span>.key = key <span class="comment">//节点的值</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="创建树（Tree）类"><a href="#创建树（Tree）类" class="headerlink" title="创建树（Tree）类"></a>创建树（Tree）类</h3><blockquote>
-<p>因ES6中没有私有方法的定义方式，这里使用<a href="http://es6.ruanyifeng.com/#README" target="_blank" rel="external">《ECMAScript 6 入门》</a>中推荐的Symbol方式定义Tree类的私有方法。</p>
+<p>因ES6中没有私有方法的定义方式，这里使用<a href="http://es6.ruanyifeng.com/#README" target="_blank" rel="noopener">《ECMAScript 6 入门》</a>中推荐的Symbol方式定义Tree类的私有方法。</p>
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
@@ -913,7 +1040,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -926,7 +1053,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
