@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="TianLiang">
 <meta property="og:description" content="在同事近期开发的项目中遇到一个需求：将小程序中的视频保存在用户手机相册中。所以前往官方文档查询实现方法。发现官方提供了  wx.downloadFile 和 wx.saveFile  接口，遂告诉同事使用这两个接口进行保存，然而在手机相册中并未找到下载的文件。后仔细阅读文档后发现了 wx.saveVideoToPhotosAlbum  这个接口才得以解决问题。事后认真阅读文档整理了这篇踩坑记录。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-06T10:33:16.145Z">
+<meta property="og:updated_time" content="2018-05-07T23:55:26.172Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序文件保存踩坑记">
 <meta name="twitter:description" content="在同事近期开发的项目中遇到一个需求：将小程序中的视频保存在用户手机相册中。所以前往官方文档查询实现方法。发现官方提供了  wx.downloadFile 和 wx.saveFile  接口，遂告诉同事使用这两个接口进行保存，然而在手机相册中并未找到下载的文件。后仔细阅读文档后发现了 wx.saveVideoToPhotosAlbum  这个接口才得以解决问题。事后认真阅读文档整理了这篇踩坑记录。">
@@ -407,7 +407,7 @@
 <h2 id="wx-openDocument"><a href="#wx-openDocument" class="headerlink" title="wx.openDocument"></a>wx.openDocument</h2><p><code>wx.openDocument</code> 接口用来打开使用 <code>wx.saveFile</code> 保存的文件。</p>
 <p>该接口可打开 doc, xls, ppt, pdf, docx, xlsx, pptx 格式的文件。打开以上格式的文件时推荐指定文件类型。如过打开的不是以上格式的文件则会将文件以 BinaryString 的形式返回（与 FileReader.readAsBinaryString 返回结果一致）。</p>
 <h2 id="wx-saveImageToPhotosAlbum"><a href="#wx-saveImageToPhotosAlbum" class="headerlink" title="wx.saveImageToPhotosAlbum"></a>wx.saveImageToPhotosAlbum</h2><p><code>wx.saveImageToPhotosAlbum</code> 接口可以将图片保存到用户手机的相册中。该接口的 filePath 属性可以是临时文件路径也可以是永久文件路径，但不支持网络图片路径。也就是说该接口只能使用 <code>wx.downloadFile</code> 接口提供的临时路径和 <code>wx.saveFile</code> 提供的永久路径。</p>
-<h2 id="wx-saveVideoToPhotosAlbum"><a href="#wx-saveVideoToPhotosAlbum" class="headerlink" title="wx.saveVideoToPhotosAlbum"></a>wx.saveVideoToPhotosAlbum</h2><p><code>wx.saveVideoToPhotosAlbum</code> 接口可以将视频保存到用户手机的相处中。该接口的 filePath 属性可以是临时文件路径也可以是永久文件路径，但不支持网络图片路径。也就是说该接口只能使用 <code>wx.downloadFile</code> 接口提供的临时路径和 <code>wx.saveFile</code> 提供的永久路径。</p>
+<h2 id="wx-saveVideoToPhotosAlbum"><a href="#wx-saveVideoToPhotosAlbum" class="headerlink" title="wx.saveVideoToPhotosAlbum"></a>wx.saveVideoToPhotosAlbum</h2><p><code>wx.saveVideoToPhotosAlbum</code> 接口可以将视频保存到用户手机的相册中。该接口的 filePath 属性可以是临时文件路径也可以是永久文件路径，但不支持网络图片路径。也就是说该接口只能使用 <code>wx.downloadFile</code> 接口提供的临时路径和 <code>wx.saveFile</code> 提供的永久路径。</p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ol>
 <li><a href="https://developers.weixin.qq.com/blogdetail?action=get_post_info&amp;docid=513c8b7a7b019ea324ca7667ca59cf71&amp;highline=%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98" target="_blank" rel="noopener">wx.saveFile 保存的文件在哪里</a></li>
 <li><a href="https://developers.weixin.qq.com/blogdetail?action=get_post_info&amp;docid=000c8210d8c6f063db76aaeed56400&amp;highline=%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98" target="_blank" rel="noopener">微信小程序 saveFile 保存文件的大小限制 10M 是什么意思？</a></li>
