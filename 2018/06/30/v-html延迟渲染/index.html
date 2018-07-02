@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="vue,延迟,v-html,数据绑定," />
 
 
 
@@ -88,16 +88,21 @@
 
 
 
-<meta name="description" content="愿这盛世，如你所愿">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TianLiang">
-<meta property="og:url" content="https://wtlsky.github.io/index.html">
+<meta name="description" content="问题描述在商城项目中，商品详情由顶部的商品主图（banner）和底部的商品详情图片，两部分组成。正确的加载顺序为先加载顶部的商品主图然后加载商品详情图片。然而实际加载顺序恰好相反，以下内容记录问题原因与解决方案。 错误演示：">
+<meta name="keywords" content="vue,延迟,v-html,数据绑定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="v-html延迟渲染">
+<meta property="og:url" content="https://wtlsky.github.io/2018/06/30/v-html延迟渲染/index.html">
 <meta property="og:site_name" content="TianLiang">
-<meta property="og:description" content="愿这盛世，如你所愿">
+<meta property="og:description" content="问题描述在商城项目中，商品详情由顶部的商品主图（banner）和底部的商品详情图片，两部分组成。正确的加载顺序为先加载顶部的商品主图然后加载商品详情图片。然而实际加载顺序恰好相反，以下内容记录问题原因与解决方案。 错误演示：">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ow0mz7346.bkt.clouddn.com/18-6-26/6266500.jpg">
+<meta property="og:image" content="http://ow0mz7346.bkt.clouddn.com/18-6-26/3954144.jpg">
+<meta property="og:updated_time" content="2018-07-02T14:50:08.529Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TianLiang">
-<meta name="twitter:description" content="愿这盛世，如你所愿">
+<meta name="twitter:title" content="v-html延迟渲染">
+<meta name="twitter:description" content="问题描述在商城项目中，商品详情由顶部的商品主图（banner）和底部的商品详情图片，两部分组成。正确的加载顺序为先加载顶部的商品主图然后加载商品详情图片。然而实际加载顺序恰好相反，以下内容记录问题原因与解决方案。 错误演示：">
+<meta name="twitter:image" content="http://ow0mz7346.bkt.clouddn.com/18-6-26/6266500.jpg">
 
 
 
@@ -127,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://wtlsky.github.io/"/>
+  <link rel="canonical" href="https://wtlsky.github.io/2018/06/30/v-html延迟渲染/"/>
 
 
 
 
 
-  <title>TianLiang</title>
+  <title>v-html延迟渲染 | TianLiang</title>
   
 
 
@@ -152,8 +157,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-  page-home">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -290,9 +294,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -322,9 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/30/v-html延迟渲染/" itemprop="url">v-html延迟渲染</a></h1>
+          <h1 class="post-title" itemprop="name headline">v-html延迟渲染</h1>
         
 
         <div class="post-meta">
@@ -385,23 +387,33 @@
       
 
       
-        
-          <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在商城项目中，商品详情由顶部的商品主图（banner）和底部的商品详情图片，两部分组成。正确的加载顺序为先加载顶部的商品主图然后加载商品详情图片。然而实际加载顺序恰好相反，以下内容记录问题原因与解决方案。</p>
+        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在商城项目中，商品详情由顶部的商品主图（banner）和底部的商品详情图片，两部分组成。正确的加载顺序为先加载顶部的商品主图然后加载商品详情图片。然而实际加载顺序恰好相反，以下内容记录问题原因与解决方案。</p>
 <h3 id="错误演示："><a href="#错误演示：" class="headerlink" title="错误演示："></a>错误演示：</h3><p><img src="http://ow0mz7346.bkt.clouddn.com/18-6-26/6266500.jpg" alt="错误演示"></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/06/30/v-html延迟渲染/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<a id="more"></a>
+<h3 id="正确演示："><a href="#正确演示：" class="headerlink" title="正确演示："></a>正确演示：</h3><p><img src="http://ow0mz7346.bkt.clouddn.com/18-6-26/3954144.jpg" alt="正确演示"></p>
+<h3 id="商品主图"><a href="#商品主图" class="headerlink" title="商品主图"></a>商品主图</h3><p>商品主图由服务端返回主图列表字符串，前端拆分处理后遍历渲染。服务端数据如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*服务端返回的主图列表，使用|分割*/</span></span><br><span class="line"><span class="string">"http://img.ineigo.com/UploadFiles/product/1805297276.jpg|http://img.ineigo.com/UploadFiles/product/1805293057.jpg|http://img.ineigo.com/UploadFiles/product/201805290411318874.jpg"</span></span><br></pre></td></tr></table></figure>
+<h3 id="商品详情"><a href="#商品详情" class="headerlink" title="商品详情"></a>商品详情</h3><p>商品详情由服务端返回 html，页面直接使用 v-html 渲染。 结构如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 服务端返回数据 --&gt;</span></span><br><span class="line">"</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">width</span>=<span class="string">\</span> "<span class="attr">750</span>\" <span class="attr">height</span>=<span class="string">\</span> "<span class="attr">45</span>\" <span class="attr">alt</span>=<span class="string">\</span> "\" <span class="attr">src</span>=<span class="string">\</span> "<span class="attr">http:</span>//<span class="attr">img3.coocaa.com</span>/<span class="attr">goods</span>/<span class="attr">skyworth</span>/<span class="attr">new</span>/通知<span class="attr">.jpg</span>\" /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span>\r\n</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">width</span>=<span class="string">\</span> "<span class="attr">750</span>\" <span class="attr">height</span>=<span class="string">\</span> "<span class="attr">26095</span>\" <span class="attr">alt</span>=<span class="string">\</span> "\" <span class="attr">src</span>=<span class="string">\</span> "<span class="attr">http:</span>//<span class="attr">img3.coocaa.com</span>/<span class="attr">goods</span>/<span class="attr">skyworth</span>/<span class="attr">2018</span>/<span class="attr">H5</span>/<span class="attr">H5-750.jpg</span>\" /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span>"</span><br></pre></td></tr></table></figure>
+<h2 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h2><p>产品详情图片加载优先于顶部 banner 的原因是 banner 使用 vue 编译后渲染，而商品详情图片不经过 vue 模板进行编译直接渲染。</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>将商品详情图片使用自定义组件包裹后即可将 v-html 的字符串经由 vue 模板编译。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 自定义商品详情渲染组件 htmlPanel.vue --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-html</span>=<span class="string">"html"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">  props: [<span class="string">"html"</span>]</span></span><br><span class="line"><span class="undefined">&#125;;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  img&#123;</span></span><br><span class="line"><span class="undefined">    width: 100%;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 商品详情 productDetail.vue --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"page"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"page-content"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">swiper</span> <span class="attr">:show-desc-mask</span>=<span class="string">'false'</span> <span class="attr">:aspect-ratio</span>=<span class="string">'1'</span> <span class="attr">dots-position</span>=<span class="string">'center'</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">swiper-item</span> <span class="attr">v-for</span>=<span class="string">"(pic, idx) in preImg"</span> <span class="attr">:key</span>=<span class="string">"idx"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"pic.img"</span> @<span class="attr">error</span>=<span class="string">"$setDefault(pic, 'img')"</span> <span class="attr">style</span>=<span class="string">"width:100%"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">swiper-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">swiper</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">      <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">		错误的商品详情图片渲染方法</span></span><br><span class="line"><span class="comment">      	&lt;div class="board details" v-html='product.Details'&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="comment">	  --&gt;</span></span><br><span class="line">        </span><br><span class="line">      <span class="comment">&lt;!-- 正确的商品详情图片渲染方法 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">v-html</span> <span class="attr">class</span>=<span class="string">"board details"</span> <span class="attr">:html</span>=<span class="string">'product.Details'</span>&gt;</span><span class="tag">&lt;/<span class="name">v-html</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> &#123;Swiper, SwiperItem &#125; <span class="keyword">from</span> <span class="string">"vux"</span>;</span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> VHtml <span class="keyword">from</span> <span class="string">"../components/htmlPanel"</span>;  <span class="comment">//引入自定义组件</span></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">  name: <span class="string">"productDetail"</span>,</span></span><br><span class="line"><span class="undefined">  data() &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="undefined">      product: &#123;&#125;,</span></span><br><span class="line"><span class="undefined">      preImg: []</span></span><br><span class="line"><span class="undefined">    &#125;;</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  created() &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">this</span>.pid = <span class="keyword">this</span>.$route.query.pid;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">this</span>.user = sessionStorage.getItem(<span class="string">"user"</span>)</span></span><br><span class="line"><span class="javascript">      ? <span class="built_in">JSON</span>.parse(sessionStorage.getItem(<span class="string">"user"</span>))</span></span><br><span class="line"><span class="undefined">      : &#123;&#125;;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">this</span>.$api.getProDetail(&#123; <span class="attr">proid</span>: <span class="keyword">this</span>.pid &#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">let</span> imgs = res.data.SKYWORTH.ListImg.split(<span class="string">"|"</span>);</span></span><br><span class="line"><span class="javascript">      imgs.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.preImg.push(&#123;</span></span><br><span class="line"><span class="undefined">          img: item</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">      &#125;);</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.product = res.data.SKYWORTH;</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  components: &#123;</span></span><br><span class="line"><span class="undefined">    Swiper,</span></span><br><span class="line"><span class="undefined">    SwiperItem,</span></span><br><span class="line"><span class="undefined">    XButton,</span></span><br><span class="line"><span class="undefined">    VHtml</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">lang</span>=<span class="string">'less'</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">// 重置来自服务端的图片尺寸</span></span><br><span class="line"><span class="undefined">.details &#123;</span></span><br><span class="line"><span class="undefined">  line-height: 0; //清除图片上下的空白区域</span></span><br><span class="line"><span class="undefined">  img &#123;</span></span><br><span class="line"><span class="undefined">    max-width: 100% !important;</span></span><br><span class="line"><span class="undefined">    margin-top: -1px !important;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
     
     
     
 
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/weChat.png" alt="武天亮 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>微信扫描添加好友</div>
+</div>
+
+      </div>
     
 
     
@@ -410,424 +422,57 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wtlsky.github.io/2018/05/06/微信小程序文件保存踩坑记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="武天亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TianLiang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/06/微信小程序文件保存踩坑记/" itemprop="url">微信小程序文件保存踩坑记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-06T16:20:00+08:00">
-                2018-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/vue/" rel="tag"># vue</a>
           
-            
+            <a href="/tags/延迟/" rel="tag"># 延迟</a>
           
-
+            <a href="/tags/v-html/" rel="tag"># v-html</a>
           
+            <a href="/tags/数据绑定/" rel="tag"># 数据绑定</a>
           
-             <span id="/2018/05/06/微信小程序文件保存踩坑记/" class="leancloud_visitors" data-flag-title="微信小程序文件保存踩坑记">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
+      
+        <div class="post-widgets">
         
-          <p>在同事近期开发的项目中遇到一个需求：将小程序中的视频保存在用户手机相册中。所以前往官方文档查询实现方法。发现官方提供了  <code>wx.downloadFile</code> 和 <code>wx.saveFile</code>  接口，遂告诉同事使用这两个接口进行保存，然而在手机相册中并未找到下载的文件。后仔细阅读文档后发现了 <code>wx.saveVideoToPhotosAlbum</code>  这个接口才得以解决问题。事后认真阅读文档整理了这篇踩坑记录。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/06/微信小程序文件保存踩坑记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
           </div>
-          <!--/noindex-->
         
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wtlsky.github.io/2018/02/28/微信小程序无限制生成formId/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="武天亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TianLiang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/28/微信小程序无限制生成formId/" itemprop="url">微信小程序无限生成 form ID</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-28T19:58:00+08:00">
-                2018-02-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/02/28/微信小程序无限制生成formId/" class="leancloud_visitors" data-flag-title="微信小程序无限生成 form ID">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
       
 
       
-        
-          <blockquote>
-<p style="color:#d33332">请注意：如无特殊情况不建议使用该方法生成form ID为用户推送消息，可能会对用户造成骚扰。从用户角度出发建议明确告知用户消息推送机制，按照正常流程为用户提供消息推送服务</p>
-</blockquote>
-<p>微信小程序模板消息推送需要配合form ID进行使用，这种做法可以防止服务方对用户产生消息骚扰。而这种设定带来便利的同时也对服务端为用户提供更好的服务产生了阻碍。在用户提交一次表单后发送多条消息提醒的环境中，服务方无法保证拿到足够数量的form ID来为用户下发消息提醒。这时需要使用变通的方法获取足够数量的 from ID。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/28/微信小程序无限制生成formId/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/06/微信小程序文件保存踩坑记/" rel="next" title="微信小程序文件保存踩坑记">
+                <i class="fa fa-chevron-left"></i> 微信小程序文件保存踩坑记
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wtlsky.github.io/2018/02/03/微信小程序自定义按钮样式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="武天亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TianLiang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/03/微信小程序自定义按钮样式/" itemprop="url">微信小程序自定义按钮样式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-03T19:41:00+08:00">
-                2018-02-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/02/03/微信小程序自定义按钮样式/" class="leancloud_visitors" data-flag-title="微信小程序自定义按钮样式">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>最近在开发微信小程序，根据设计图完成页面。遇到如下图的设计稿，实现过程中发现微信小程序自带的按钮一直会有一条黑色边框，使用常规 CSS 无法清除，导致页面的保存按钮不能实现与设计师相同的效果。</p>
-<p>经过查找资料成功解决，现记录下来，以防忘记。</p>
-<p><img src="http://ow0mz7346.bkt.clouddn.com/18-2-3/63721704.jpg?imageMogr2/thumbnail/!55p" alt="设计图"></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/03/微信小程序自定义按钮样式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -837,305 +482,26 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wtlsky.github.io/2017/11/20/CSS浮动学习/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="武天亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TianLiang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/20/CSS浮动学习/" itemprop="url">CSS浮动学习</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T20:04:32+08:00">
-                2017-11-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/11/20/CSS浮动学习/" class="leancloud_visitors" data-flag-title="CSS浮动学习">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="常规流、包含块和块框"><a href="#常规流、包含块和块框" class="headerlink" title="常规流、包含块和块框"></a>常规流、包含块和块框</h1><ul>
-<li><p>页面内容像流水一样从上至下，从左自动排列即为常规流。如果一个元素处于常规流则会自动将之后的元素（文本、图像等）顶到后边。</p>
-</li>
-<li><p>对常规流内的元素设置浮动或定位可使该元素脱离常规流（并不全是）</p>
-</li>
-<li><p>一个元素的包含块即该元素的块级父元素。</p>
-</li>
-<li><p>一个元素设置了浮动后则变为浮动元素（即块框）</p>
-</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/20/CSS浮动学习/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
 
 
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wtlsky.github.io/2017/10/09/javascript二叉排序树/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="武天亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TianLiang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/09/javascript二叉排序树/" itemprop="url">使用javascript撸一棵二叉排序树</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-09T09:31:59+08:00">
-                2017-10-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/10/09/javascript二叉排序树/" class="leancloud_visitors" data-flag-title="使用javascript撸一棵二叉排序树">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="什么是二叉排序树"><a href="#什么是二叉排序树" class="headerlink" title="什么是二叉排序树"></a>什么是二叉排序树</h2><p>二叉排序树是一棵空树或者是具有下列性质的二叉树：</p>
-<ol>
-<li>若左子树不空，则左子树上所有结点的值均小于或等于它的根结点的值；</li>
-<li>若右子树不空，则右子树上所有结点的值均大于或等于它的根结点的值；</li>
-<li>左、右子树也分别为二叉排序树</li>
-</ol>
-<h2 id="构造二叉排序树"><a href="#构造二叉排序树" class="headerlink" title="构造二叉排序树"></a>构造二叉排序树</h2><h3 id="创建节点（Node-类"><a href="#创建节点（Node-类" class="headerlink" title="创建节点（Node) 类"></a>创建节点（Node) 类</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(key)&#123;</span><br><span class="line">    <span class="keyword">this</span>.left = <span class="literal">null</span> <span class="comment">//左子树</span></span><br><span class="line">    <span class="keyword">this</span>.right = <span class="literal">null</span> <span class="comment">//右子树</span></span><br><span class="line">    <span class="keyword">this</span>.key = key <span class="comment">//节点的值</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="创建树（Tree）类"><a href="#创建树（Tree）类" class="headerlink" title="创建树（Tree）类"></a>创建树（Tree）类</h3><blockquote>
-<p>因ES6中没有私有方法的定义方式，这里使用<a href="http://es6.ruanyifeng.com/#README" target="_blank" rel="noopener">《ECMAScript 6 入门》</a>中推荐的Symbol方式定义Tree类的私有方法。</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/09/javascript二叉排序树/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="vcomments"></div>
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
   
 
 
-          </div>
-          
-
-
-          
 
         </div>
         
@@ -1156,8 +522,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1235,6 +610,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#错误演示："><span class="nav-number">1.1.</span> <span class="nav-text">错误演示：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正确演示："><span class="nav-number">1.2.</span> <span class="nav-text">正确演示：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#商品主图"><span class="nav-number">1.3.</span> <span class="nav-text">商品主图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#商品详情"><span class="nav-number">1.4.</span> <span class="nav-text">商品详情</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误原因"><span class="nav-number">2.</span> <span class="nav-text">错误原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方法"><span class="nav-number">3.</span> <span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">4.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1374,6 +765,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
