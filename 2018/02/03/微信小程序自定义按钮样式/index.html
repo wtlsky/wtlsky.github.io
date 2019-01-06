@@ -6,10 +6,10 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -27,8 +27,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -47,7 +47,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -55,9 +55,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
@@ -75,13 +75,13 @@
 
 
 
-  <meta name="keywords" content="微信小程序,样式,按钮," />
+  <meta name="keywords" content="微信小程序,样式,按钮,">
 
 
 
 
 
-  <link rel="alternate" href="/atom.xml" title="TianLiang" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="TianLiang" type="application/atom+xml">
 
 
 
@@ -96,17 +96,17 @@
 <meta property="og:site_name" content="TianLiang">
 <meta property="og:description" content="最近在开发微信小程序，根据设计图完成页面。遇到如下图的设计稿，实现过程中发现微信小程序自带的按钮一直会有一条黑色边框，使用常规 CSS 无法清除，导致页面的保存按钮不能实现与设计师相同的效果。 经过查找资料成功解决，现记录下来，以防忘记。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ow0mz7346.bkt.clouddn.com/18-2-3/63721704.jpg?imageMogr2/thumbnail/!55p">
-<meta property="og:image" content="http://ow0mz7346.bkt.clouddn.com/18-2-3/93158409.jpg">
-<meta property="og:image" content="http://ow0mz7346.bkt.clouddn.com/18-2-3/31196457.jpg?">
-<meta property="og:image" content="http://ow0mz7346.bkt.clouddn.com/18-2-3/33044597.jpg">
-<meta property="og:image" content="http://ow0mz7346.bkt.clouddn.com/18-2-3/82763648.jpg">
-<meta property="og:image" content="http://ow0mz7346.bkt.clouddn.com/18-2-3/29101258.jpg">
-<meta property="og:updated_time" content="2018-02-03T13:05:18.399Z">
+<meta property="og:image" content="http://cdn.mtc2194.com/18-2-3/63721704.jpg?imageMogr2/thumbnail/!55p">
+<meta property="og:image" content="http://cdn.mtc2194.com/18-2-3/93158409.jpg">
+<meta property="og:image" content="http://cdn.mtc2194.com/18-2-3/31196457.jpg?">
+<meta property="og:image" content="http://cdn.mtc2194.com/18-2-3/33044597.jpg">
+<meta property="og:image" content="http://cdn.mtc2194.com/18-2-3/82763648.jpg">
+<meta property="og:image" content="http://cdn.mtc2194.com/18-2-3/29101258.jpg">
+<meta property="og:updated_time" content="2019-01-06T06:45:01.204Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序自定义按钮样式">
 <meta name="twitter:description" content="最近在开发微信小程序，根据设计图完成页面。遇到如下图的设计稿，实现过程中发现微信小程序自带的按钮一直会有一条黑色边框，使用常规 CSS 无法清除，导致页面的保存按钮不能实现与设计师相同的效果。 经过查找资料成功解决，现记录下来，以防忘记。">
-<meta name="twitter:image" content="http://ow0mz7346.bkt.clouddn.com/18-2-3/63721704.jpg?imageMogr2/thumbnail/!55p">
+<meta name="twitter:image" content="http://cdn.mtc2194.com/18-2-3/63721704.jpg?imageMogr2/thumbnail/!55p">
 
 
 
@@ -136,7 +136,7 @@
 
 
 
-  <link rel="canonical" href="https://wtlsky.github.io/2018/02/03/微信小程序自定义按钮样式/"/>
+  <link rel="canonical" href="https://wtlsky.github.io/2018/02/03/微信小程序自定义按钮样式/">
 
 
 
@@ -154,7 +154,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -164,13 +164,13 @@
   <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">TianLiang</span>
         <span class="logo-line-after"><i></i></span>
@@ -200,7 +200,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -210,7 +210,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -220,7 +220,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -230,7 +230,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -240,7 +240,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -253,7 +253,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
             搜索
           </a>
@@ -274,9 +274,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -308,20 +306,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wtlsky.github.io/2018/02/03/微信小程序自定义按钮样式/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="武天亮">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="TianLiang">
     </span>
 
@@ -393,20 +391,20 @@
       
         <p>最近在开发微信小程序，根据设计图完成页面。遇到如下图的设计稿，实现过程中发现微信小程序自带的按钮一直会有一条黑色边框，使用常规 CSS 无法清除，导致页面的保存按钮不能实现与设计师相同的效果。</p>
 <p>经过查找资料成功解决，现记录下来，以防忘记。</p>
-<p><img src="http://ow0mz7346.bkt.clouddn.com/18-2-3/63721704.jpg?imageMogr2/thumbnail/!55p" alt="设计图"></p>
+<p><img src="http://cdn.mtc2194.com/18-2-3/63721704.jpg?imageMogr2/thumbnail/!55p" alt="设计图"></p>
 <a id="more"></a>
 <h2 id="默认按钮"><a href="#默认按钮" class="headerlink" title="默认按钮"></a>默认按钮</h2><p>在解决问题之前，先来看看微信小程序默认的按钮样式。</p>
-<p><img src="http://ow0mz7346.bkt.clouddn.com/18-2-3/93158409.jpg" alt="默认按钮"></p>
+<p><img src="http://cdn.mtc2194.com/18-2-3/93158409.jpg" alt="默认按钮"></p>
 <p>根据官方文档说明，微信小程序的按钮可有三种不同的类型，分别时：<code>primary</code>（绿色）、<code>warn</code>（红色）和 <code>default</code> （灰白色）。按钮上的文字颜色根据不同类型自动变化。</p>
 <p>不过在实际开发过程中默认的按钮样式一定无法达到设计师的要求，那么我们如何自定义样式呢？</p>
 <h2 id="自定义按钮样式"><a href="#自定义按钮样式" class="headerlink" title="自定义按钮样式"></a>自定义按钮样式</h2><p>通过在 wxss 中为 button 设置样式可自定义按钮样式。</p>
-<p><img src="http://ow0mz7346.bkt.clouddn.com/18-2-3/31196457.jpg?" alt="自定义按钮样式"></p>
+<p><img src="http://cdn.mtc2194.com/18-2-3/31196457.jpg?" alt="自定义按钮样式"></p>
 <p>上图中我为最底下的按钮设置了背景颜色和字体大小。与设计稿相比可发现设计稿中没有圆角，并且没有边框。接下来为按钮设置 <code>border-radius:0;border:0;</code> 的样式来清除圆角和边框。</p>
-<p><img src="http://ow0mz7346.bkt.clouddn.com/18-2-3/33044597.jpg" alt="清除圆角和边框-未成功"></p>
-<p><img src="http://ow0mz7346.bkt.clouddn.com/18-2-3/82763648.jpg" alt="放大图"></p>
+<p><img src="http://cdn.mtc2194.com/18-2-3/33044597.jpg" alt="清除圆角和边框-未成功"></p>
+<p><img src="http://cdn.mtc2194.com/18-2-3/82763648.jpg" alt="放大图"></p>
 <p>o((⊙﹏⊙))o 起初看到这个结果我以为是还有圆角（近视眼伤不起啊），后来经过放大发现是 border 的原因。但是我写了    <code>border:0;</code> 了呀。为什么还有，不科学。</p>
 <p>经过一番查找，终于找到了解决方案。原来是微信小程序里覆盖border样式需要在after伪元素里设置才能生效。经实际测试有效。不明白为什么微信小程序要这样设计。</p>
-<p><img src="http://ow0mz7346.bkt.clouddn.com/18-2-3/29101258.jpg" alt="最终效果图"></p>
+<p><img src="http://cdn.mtc2194.com/18-2-3/29101258.jpg" alt="最终效果图"></p>
 
       
     </div>
@@ -417,7 +415,7 @@
     
       <div>
         <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/images/weChat.png" alt="武天亮 wechat" style="width: 200px; max-width: 100%;"/>
+    <img id="wechat_subscriber_qcode" src="/images/weChat.png" alt="武天亮 wechat" style="width: 200px; max-width: 100%;">
     <div>微信扫描添加好友</div>
 </div>
 
@@ -544,11 +542,9 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="武天亮" />
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="武天亮">
             
               <p class="site-author-name" itemprop="name">武天亮</p>
               <p class="site-description motion-element" itemprop="description">愿这盛世，如你所愿</p>
@@ -657,7 +653,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
