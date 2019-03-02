@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wtlsky.github.io/"/>
-  <updated>2019-01-06T06:45:02.297Z</updated>
+  <updated>2019-03-02T14:49:08.977Z</updated>
   <id>https://wtlsky.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue 递归组件的实现</title>
+    <link href="https://wtlsky.github.io/2019/03/02/vue%E9%80%92%E5%BD%92%E7%BB%84%E4%BB%B6/"/>
+    <id>https://wtlsky.github.io/2019/03/02/vue递归组件/</id>
+    <published>2019-03-02T12:19:00.000Z</published>
+    <updated>2019-03-02T14:49:08.977Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="需求描述"><a href="#需求描述" class="headerlink" title="需求描述"></a>需求描述</h2><p>基于 element-ui 实现无限分级的嵌套表格</p><blockquote><p>效果图如下：</p></blockquote><p><a href="https://s2.ax1x.com/2019/03/02/kqJRN6.gif" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/03/02/kqJRN6.gif" alt="kqJRN6.md.gif"></a></p><blockquote><p>数据格式如下：</p></blockquote><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        children: [</span><br><span class="line">            &#123;</span><br><span class="line">                label: "县级名称1",</span><br><span class="line">                value: 0,</span><br><span class="line">                value1: 0,</span><br><span class="line">                value2: 0</span><br><span class="line">            &#125;,</span><br><span class="line">             &#123;</span><br><span class="line">                label: "县级名称2",</span><br><span class="line">                value: 0,</span><br><span class="line">                value1: 0,</span><br><span class="line">                value2: 0</span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">        label: '省级名称',</span><br><span class="line">        value: 0,</span><br><span class="line">        value1: 0,</span><br><span class="line">        vlaue2: 0</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure><h2 id="city-组件"><a href="#city-组件" class="headerlink" title="city 组件"></a>city 组件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--city组件，基于element-ui  --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;el-table</span><br><span class="line">  border</span><br><span class="line">    ref=&quot;table&quot;</span><br><span class="line">    size=&quot;mini&quot;</span><br><span class="line">    :data=&quot;list&quot;</span><br><span class="line">    :show-header=&quot;false&quot;</span><br><span class="line">    @row-click=&quot;rowClick&quot;</span><br><span class="line">  &gt;</span><br><span class="line">    &lt;el-table-column type=&quot;expand&quot;&gt;</span><br><span class="line">      &lt;template slot-scope=&quot;&#123;row&#125;&quot;&gt;</span><br><span class="line">        &lt;city :list=&quot;row.children&quot;&gt;&lt;/city&gt; &lt;!-- 递归调用组件本身 --&gt;</span><br><span class="line">      &lt;/template&gt;</span><br><span class="line">    &lt;/el-table-column&gt;</span><br><span class="line">    &lt;el-table-column width=&quot;150&quot; label=&quot;name&quot; prop=&quot;label&quot; align=&quot;center&quot;&gt;&lt;/el-table-column&gt;</span><br><span class="line">    &lt;el-table-column  label=&quot;value&quot; prop=&quot;value&quot; align=&quot;center&quot;&gt;&lt;/el-table-column&gt;</span><br><span class="line">    &lt;el-table-column  label=&quot;value1&quot; prop=&quot;value1&quot; align=&quot;center&quot;&gt;&lt;/el-table-column&gt;</span><br><span class="line">    &lt;el-table-column  label=&quot;value2&quot; prop=&quot;value2&quot; align=&quot;center&quot;&gt;&lt;/el-table-column&gt;</span><br><span class="line">  &lt;/el-table&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &quot;city&quot;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    list: &#123;</span><br><span class="line">      default: ()=&gt;&#123;return []&#125;,</span><br><span class="line">      type: Array,</span><br><span class="line">      required: true</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    rowClick(row) &#123;</span><br><span class="line">      this.$refs.table.toggleRowExpansion(row);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style  lang=&apos;scss&apos; scoped&gt;</span><br><span class="line">/deep/ .el-table__expanded-cell[class*=&quot;cell&quot;] &#123;</span><br><span class="line">  padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure><p>vue中组件递归需要为组件设置name属性，在组件里通过name调用自身。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;需求描述&quot;&gt;&lt;a href=&quot;#需求描述&quot; class=&quot;headerlink&quot; title=&quot;需求描述&quot;&gt;&lt;/a&gt;需求描述&lt;/h2&gt;&lt;p&gt;基于 element-ui 实现无限分级的嵌套表格&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;效果图如下：&lt;/p&gt;
+&lt;/blo
+      
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://wtlsky.github.io/tags/vue/"/>
+    
+      <category term="数据绑定" scheme="https://wtlsky.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/"/>
+    
+      <category term="组件" scheme="https://wtlsky.github.io/tags/%E7%BB%84%E4%BB%B6/"/>
+    
+      <category term="递归" scheme="https://wtlsky.github.io/tags/%E9%80%92%E5%BD%92/"/>
+    
+  </entry>
   
   <entry>
     <title>v-html延迟渲染</title>
